@@ -22,8 +22,7 @@ jobs:
           go-version: '~1.17.7'
       - name: Build
         run: |
-          cd learning-golang
-          go mod download
+          ls -l
           go build
       - name: Run Linter
         uses: golangci/golangci-lint-action@v2
