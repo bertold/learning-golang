@@ -14,3 +14,15 @@ func TestNilSlices(t *testing.T) {
 	SliceWithNilCheck(simpleSlice)
 	SliceNoNilCheck(simpleSlice)
 }
+
+func TestValueSwap(t *testing.T) {
+	a, b := "alpha", "beta"
+	SwapValuesWithTemp(&a, &b)
+	if a != "beta" || b != "alpha" {
+		t.Fail()
+	}
+	SwapValuesWithTemp(&a, &b)
+	if a != "alpha" || b != "beta" {
+		t.Fail()
+	}
+}

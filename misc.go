@@ -22,3 +22,17 @@ func SliceNoNilCheck(slice []string) {
 		log.Println(s)
 	}
 }
+
+// Swaps values of the provided pointers using
+// an unnecessary temporary variable.
+func SwapValuesWithTemp(a *string, b *string) {
+	// nolint:gocritic // for demonstration purposes
+	temp := *a
+	*a = *b
+	*b = temp
+}
+
+// Swaps values of the provided pointers without a temporary variable.
+func SwapValuesNoTemp(a *string, b *string) {
+	*a, *b = *b, *a
+}
